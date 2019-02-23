@@ -4,6 +4,8 @@ package com.hashcode.generic;
 public class DeepSearch {
     private static DeepSearch ourInstance = null;
 
+    private final int numNodesCommit = 10000;
+
     public static DeepSearch getInstance(Node initialNode, String fileName) {
         if(ourInstance == null){
             ourInstance = new DeepSearch(initialNode,fileName);
@@ -13,6 +15,7 @@ public class DeepSearch {
 
     private Node processingNode;
     private String fileName;
+    private int numNodesProcessed=0;
 
     private int bestSolution;
 
@@ -23,15 +26,16 @@ public class DeepSearch {
 
 
     public void execute() {
-        System.out.println("Next level");
         if(!processingNode.updateStateNextChild()){
-            System.out.println("Solution found - " + processingNode.getWeigth());
             printIfIsBestNode();
         }else{
             do{
+                numNodesProcessed++;
+                if (numNodesProcessed> numNodesCommit){
+                    printIfIsBestNode();
+                }
                 execute();
                 processingNode.rollBackState();
-                System.out.println("Next child");
             }while(processingNode.updateStateNextChild());
 
 
@@ -39,7 +43,7 @@ public class DeepSearch {
     }
 
     private synchronized void printIfIsBestNode() {
-        if(processingNode.getWeigth() >= bestSolution){
+        if(processingNode.getWeigth() > bestSolution){
             processingNode.printSolution(fileName);
             bestSolution = processingNode.getWeigth();
         }

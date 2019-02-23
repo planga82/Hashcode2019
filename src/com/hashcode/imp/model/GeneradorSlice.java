@@ -1,8 +1,6 @@
 package com.hashcode.imp.model;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class GeneradorSlice {
 
@@ -21,6 +19,7 @@ public class GeneradorSlice {
 	}
 
 	public Iterator<Slice> getSlices(){
+		Collections.shuffle(listTotalSilces);
 		return listTotalSilces.iterator();
 	}
 
