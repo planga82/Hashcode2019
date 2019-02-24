@@ -1,13 +1,9 @@
 package com.hashcode.imp.model;
 
 import com.hashcode.generic.Node;
-import javafx.util.Pair;
-
 import java.util.*;
-import java.util.function.Function;
-import java.util.stream.Stream;
 
-public class PizzaEvolution implements Node {
+public class PizzaEvolution implements Node, Cloneable {
 
 	//Base pizza
 	Pizza pizza;
@@ -16,6 +12,8 @@ public class PizzaEvolution implements Node {
 	Cell[][] base;
 	Stack<Slice> selectedSlices;
     Stack<Iterator<Slice>> totalSlices;
+
+    private PizzaEvolution(){};
 
 	public PizzaEvolution(Pizza pizza) {
 		this.pizza = pizza;
@@ -104,7 +102,7 @@ public class PizzaEvolution implements Node {
 	}
 
 
-    public List<String> toFileNames(){
+	public List<String> toFileNames(){
         ArrayList<String> ret = new ArrayList<>();
         ret.add(String.valueOf(selectedSlices.size()));
         for (Slice slice : selectedSlices) {
@@ -115,6 +113,11 @@ public class PizzaEvolution implements Node {
         System.out.println("toFileNames - " + ret.size() + " Time:" +  System.currentTimeMillis());
         return ret;
     }
+
+    @Override
+	public int numChilds(){
+		return GeneradorSlice.getInstance(pizza).listTotalSilces.size() / 2;
+	}
 
 
 }

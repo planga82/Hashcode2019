@@ -2,16 +2,8 @@ package com.hashcode.generic;
 
 
 public class DeepSearch {
-    private static DeepSearch ourInstance = null;
 
     private final int numNodesCommit = 10000;
-
-    public static DeepSearch getInstance(Node initialNode, String fileName) {
-        if(ourInstance == null){
-            ourInstance = new DeepSearch(initialNode,fileName);
-        }
-            return ourInstance;
-    }
 
     private Node processingNode;
     private String fileName;
@@ -19,7 +11,7 @@ public class DeepSearch {
 
     private int bestSolution;
 
-    private DeepSearch(Node initialNode,String fileName) {
+    public DeepSearch(Node initialNode,String fileName) {
         processingNode = initialNode;
         this.fileName=fileName;
     }

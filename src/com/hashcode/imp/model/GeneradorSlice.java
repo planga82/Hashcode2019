@@ -5,7 +5,7 @@ import java.util.*;
 public class GeneradorSlice {
 
 	private static GeneradorSlice instance = null;
-	private List<Slice> listTotalSilces;
+	public List<Slice> listTotalSilces;
 
 	public static GeneradorSlice getInstance(Pizza pizza){
 		if(instance == null){
@@ -19,7 +19,6 @@ public class GeneradorSlice {
 	}
 
 	public Iterator<Slice> getSlices(){
-		//Collections.shuffle(listTotalSilces);
 		return listTotalSilces.iterator();
 	}
 
