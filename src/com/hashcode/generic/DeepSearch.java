@@ -33,6 +33,7 @@ public class DeepSearch {
                 numNodesProcessed++;
                 if (numNodesProcessed> numNodesCommit){
                     printIfIsBestNode();
+                    numNodesProcessed=0;
                 }
                 execute();
                 processingNode.rollBackState();

@@ -19,7 +19,7 @@ public class GeneradorSlice {
 	}
 
 	public Iterator<Slice> getSlices(){
-		Collections.shuffle(listTotalSilces);
+		//Collections.shuffle(listTotalSilces);
 		return listTotalSilces.iterator();
 	}
 
