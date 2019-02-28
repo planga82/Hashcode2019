@@ -15,5 +15,14 @@ public class Slide {
         }
         return ret;
     }
+    
+    public Slide(Photo p) {
+    	elements.add(p);
+    }
+    
+    public Slide(Photo p, Photo p2) {
+    	elements.add(p);
+    	elements.add(p2);
+    }
 
 }

@@ -27,4 +27,38 @@ public class PhotoCollection {
             photos.add(p);
         }
     }
+    
+    
+    public List<Slide> getSlides() {
+    	List<Slide> slides = new LinkedList<Slide>();
+    	
+    	for(Photo p: photos) {
+    		
+    		if(!p.vertival) {
+    			slides.add(new Slide(p));
+    			photos.remove(p);
+    		}else {
+    			Photo p2 = buscarVertical(p);
+    			if(p2 != null) {
+    				slides.add(new Slide(p, p2));
+    				photos.remove(p);
+    				photos.remove(p2);
+    			}else {
+    				photos.remove(p);
+    			}
+    		}
+    		
+    		
+    	}
+    	
+    	return slides;
+    	
+    }
+
+
+	private Photo buscarVertical(Photo p) {
+		
+		
+		return null;
+	}
 }

@@ -27,7 +27,7 @@ public class Main {
         //new ParalellDeepSearch(4).executeParallel(branches,filename);
         //new DeepSearch(n,filename).execute();
 
-        PhotoCollection pc = new PhotoCollection(Utils.readFromFile("/home/pablo.langa/EntornoTrabajo/hashcode2019/Hashcode2019/"+ filename+".txt"));
+        PhotoCollection pc = new PhotoCollection(Utils.readFromFile("D:\\EclipseWorkspace\\HashCode"+ filename+".txt"));
         pc.toString();
     }
 }
