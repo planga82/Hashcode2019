@@ -1,4 +1,4 @@
-package com.hashcode.imp.model;
+package com.hashcode.pizza.model;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

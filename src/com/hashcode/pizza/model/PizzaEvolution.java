@@ -1,4 +1,4 @@
-package com.hashcode.imp.model;
+package com.hashcode.pizza.model;
 
 import com.hashcode.generic.Node;
 import java.util.*;

@@ -1,11 +1,10 @@
 package com.hashcode;
 
-import com.hashcode.generic.DeepSearch;
 import com.hashcode.generic.Node;
 import com.hashcode.generic.ParalellDeepSearch;
-import com.hashcode.imp.model.PizzaEvolution;
-import com.hashcode.imp.model.Pizza;
-import com.hashcode.imp.model.Utils;
+import com.hashcode.pizza.model.PizzaEvolution;
+import com.hashcode.pizza.model.Pizza;
+import com.hashcode.pizza.model.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
