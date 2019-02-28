@@ -6,4 +6,5 @@ import java.util.List;
 public class SlideShow {
 
     public List<Slide> slides = new LinkedList<>();
+
 }
