@@ -16,8 +16,8 @@ public class HorizontalProcess {
         Slide slide1 = it.next();
         Slide slide2 = it.next();
 
-        ret.slides.add(it.next());
-        ret.slides.add(it.next());
+        ret.slides.add(slide1);
+        ret.slides.add(slide2);
         disponibleSlides.remove(slide1);
         disponibleSlides.remove(slide2);
 
@@ -29,7 +29,7 @@ public class HorizontalProcess {
 
                 Iterator<Slide> itDisp = disponibleSlides.iterator();
                 while(itDisp.hasNext() && !mejoramos){
-                    Slide procesable = it.next();
+                    Slide procesable = itDisp.next();
                     if(insertamosSlide(ret.slides.get(reti),ret.slides.get(reti+1),procesable)){
                         ret.slides.add(reti+1,procesable);
                         disponibleSlides.remove(procesable);
