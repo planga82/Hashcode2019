@@ -14,9 +14,9 @@ public class Main {
     public static void main(String[] args) throws Exception {
         //String filename = "a_example";
         //String filename = "b_lovely_landscapes";
-        String filename = "c_memorable_moments";
+        //String filename = "c_memorable_moments";
         //String filename = "d_pet_pictures";
-        //String filename = "e_shiny_selfies";
+        String filename = "e_shiny_selfies";
 
 
         //List<Node> branches = new ArrayList<>();
@@ -30,12 +30,12 @@ public class Main {
 
         //PhotoCollection pc = new PhotoCollection(Utils.readFromFile("D:\\EclipseWorkspace\\HashCode"+ filename+".txt"));
 
-
+        String outFile = "/home/pablo.langa/EntornoTrabajo/hashcode2019/Hashcode2019/"+ filename+".out";
 
         PhotoCollection pc = new PhotoCollection(Utils.readFromFile("/home/pablo.langa/EntornoTrabajo/hashcode2019/Hashcode2019/"+ filename+".txt"));
-        SlideShow result = new HorizontalProcess().process(pc.getSlides());
+        SlideShow result = new HorizontalProcess().process(pc.getSlides(),outFile);
 
-        result.write("/home/pablo.langa/EntornoTrabajo/hashcode2019/Hashcode2019/"+ filename+".out");
+        result.write(outFile);
 
         pc.toString();
     }

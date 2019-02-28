@@ -15,11 +15,11 @@ public class SlideShow {
    
     	FileWriter fw = new FileWriter(new File(file));
 		BufferedWriter bw = new BufferedWriter(fw);
-		bw.write(slides.size());
+		bw.write(String.valueOf(slides.size()));
 		bw.newLine();
 		for(Slide s: slides) {
 			for(Photo p : s.elements) {
-				bw.write(p.id);
+				bw.write(String.valueOf(p.id));
 				bw.write(' ');
 			}
 			bw.newLine();

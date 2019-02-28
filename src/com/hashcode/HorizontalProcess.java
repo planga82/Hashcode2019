@@ -3,12 +3,13 @@ package com.hashcode;
 import com.hashcode.slideshow.Slide;
 import com.hashcode.slideshow.SlideShow;
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
 public class HorizontalProcess {
 
-    public SlideShow process(List<Slide> disponibleSlides){
+    public SlideShow process(List<Slide> disponibleSlides, String file) throws IOException {
         SlideShow ret = new SlideShow();
 
         Iterator<Slide> it = disponibleSlides.iterator();
@@ -22,6 +23,9 @@ public class HorizontalProcess {
         disponibleSlides.remove(slide2);
 
         boolean mejoramos = true;
+
+        int count2 = 0;
+        int count=0;
         while(mejoramos && disponibleSlides.size() > 0){
             mejoramos = false;
 
@@ -45,6 +49,13 @@ public class HorizontalProcess {
                 Slide s = disponibleSlides.get(0);
                 ret.slides.add(s);
                 disponibleSlides.remove(s);
+            }
+
+            count++;
+            if(count > 300){
+                count = 0;
+                count2++;
+                ret.write(file + count2);
             }
         }
         return ret;
