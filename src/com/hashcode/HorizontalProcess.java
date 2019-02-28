@@ -22,7 +22,7 @@ public class HorizontalProcess {
         disponibleSlides.remove(slide2);
 
         boolean mejoramos = true;
-        while(mejoramos){
+        while(mejoramos && disponibleSlides.size() > 0){
             mejoramos = false;
 
             for(int reti = 0; reti < ret.slides.size()-1 ; reti++){
@@ -40,9 +40,13 @@ public class HorizontalProcess {
                     break;
                 }
             }
+
+            if(!mejoramos){
+                Slide s = disponibleSlides.get(0);
+                ret.slides.add(s);
+                disponibleSlides.remove(s);
+            }
         }
-
-
         return ret;
 
     }
