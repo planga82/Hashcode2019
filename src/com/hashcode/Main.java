@@ -12,11 +12,11 @@ import com.hashcode.slideshow.SlideShow;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        //String filename = "a_example";
+        String filename = "a_example";
         //String filename = "b_lovely_landscapes";
         //String filename = "c_memorable_moments";
         //String filename = "d_pet_pictures";
-        String filename = "e_shiny_selfies";
+        //String filename = "e_shiny_selfies";
 
 
         //List<Node> branches = new ArrayList<>();

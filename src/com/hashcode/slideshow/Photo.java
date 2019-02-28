@@ -18,10 +18,16 @@ public class Photo {
     public int getCoincidencias(Photo p) {
     	int num=0;
     	for(String s: tags) {
-    		//To do: se puede optimizar la busqueda.
-    		if(p.tags.contains(s)) {
-    			num++;
-    		}
+
+    		for(String str: p.tags){
+    			int cmp = s.compareTo(str);
+    			if(cmp == 0){
+    				num++;
+				}else if(cmp>1){
+    				break;
+				}
+			}
+
     	}
     	
     	return num;

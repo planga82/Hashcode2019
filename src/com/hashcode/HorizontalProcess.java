@@ -26,6 +26,9 @@ public class HorizontalProcess {
 
         int count2 = 0;
         int count=0;
+
+        Long t = System.currentTimeMillis();
+
         while(mejoramos && disponibleSlides.size() > 0){
             mejoramos = false;
 
@@ -51,11 +54,10 @@ public class HorizontalProcess {
                 disponibleSlides.remove(s);
             }
 
-            count++;
-            if(count > 300){
-                count = 0;
-                count2++;
-                ret.write(file + count2);
+
+            Long t2 = System.currentTimeMillis();
+            if(t2- t > 300000){                
+                ret.write(file + t2);
             }
         }
         return ret;
