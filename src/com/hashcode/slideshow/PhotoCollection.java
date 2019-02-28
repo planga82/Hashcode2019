@@ -21,9 +21,7 @@ public class PhotoCollection {
 
             int numTags = Integer.parseInt(elements[1]);
             for(int i = 0; i< numTags; i++){
-                Tag tag = new Tag();
-                tag.text = elements[2+i];
-                p.tags.add(tag);
+                p.tags.add(elements[2+i]);
             }
 
             photos.add(p);

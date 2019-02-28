@@ -3,9 +3,7 @@ package com.hashcode.slideshow;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Photo {
+public class SlideShow {
 
-    List<String> tags = new LinkedList<>();
-    boolean vertival;
-
+    List<Slide> slides = new LinkedList<>();
 }
