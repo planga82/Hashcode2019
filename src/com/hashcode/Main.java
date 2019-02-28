@@ -24,9 +24,9 @@ public class Main {
         //new ParalellDeepSearch(4).executeParallel(branches,filename);
         //new DeepSearch(n,filename).execute();
 
-        PhotoCollection pc = new PhotoCollection(Utils.readFromFile("D:\\EclipseWorkspace\\HashCode"+ filename+".txt"));
-        List<Slide> slides = pc.getSlides();
-        
+        PhotoCollection pc = new PhotoCollection(Utils.readFromFile("D:\\EclipseWorkspace\\HashCode\\"+ filename+".txt"));
+        new HorizontalProcess().process(pc.getSlides());
+
         pc.toString();
     }
 }

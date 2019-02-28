@@ -25,4 +25,8 @@ public class Slide {
     	elements.add(p2);
     }
 
+    public int getCoincidencias(Slide slide){
+        return 0;
+    }
+
 }
