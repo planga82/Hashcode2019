@@ -13,7 +13,7 @@ public class PhotoCollection {
 
 		for (int x = 1; x <= numPhotos; x++) {
 
-			Photo p = new Photo();
+			Photo p = new Photo(x-1);
 
 			String line = fileLines.get(x);
 			String[] elements = line.split(" ");

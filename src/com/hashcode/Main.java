@@ -1,14 +1,11 @@
 package com.hashcode;
 
-import com.hashcode.generic.Node;
-import com.hashcode.generic.ParalellDeepSearch;
-import com.hashcode.pizza.model.PizzaEvolution;
-import com.hashcode.pizza.model.Pizza;
+import java.util.LinkedList;
+import java.util.List;
+
 import com.hashcode.pizza.model.Utils;
 import com.hashcode.slideshow.PhotoCollection;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.hashcode.slideshow.Slide;
 
 
 public class Main {
@@ -28,6 +25,8 @@ public class Main {
         //new DeepSearch(n,filename).execute();
 
         PhotoCollection pc = new PhotoCollection(Utils.readFromFile("D:\\EclipseWorkspace\\HashCode"+ filename+".txt"));
+        List<Slide> slides = pc.getSlides();
+        
         pc.toString();
     }
 }
