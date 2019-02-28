@@ -13,7 +13,7 @@ public class PhotoCollection {
 
 		for (int x = 1; x <= numPhotos; x++) {
 
-			Photo p = new Photo();
+			Photo p = new Photo(x-1);
 
 			String line = fileLines.get(x);
 			String[] elements = line.split(" ");
@@ -32,19 +32,23 @@ public class PhotoCollection {
 	public List<Slide> getSlides() {
 		List<Slide> slides = new LinkedList<Slide>();
 
+		List<Photo> verticales = new LinkedList<Photo>();
+		for (Photo p : photos) {
+			if (p.vertival) {
+				verticales.add(p);
+			}
+		}
+		
 		for (Photo p : photos) {
 
 			if (!p.vertival) {
 				slides.add(new Slide(p));
-				photos.remove(p);
 			} else {
-				Photo p2 = buscarVertical(p);
+				Photo p2 = buscarVertical(p, verticales);
 				if (p2 != null) {
 					slides.add(new Slide(p, p2));
-					photos.remove(p);
-					photos.remove(p2);
-				} else {
-					photos.remove(p);
+					verticales.remove(p);
+					verticales.remove(p2);
 				}
 			}
 
@@ -54,12 +58,12 @@ public class PhotoCollection {
 
 	}
 
-	private Photo buscarVertical(Photo p) {
+	private Photo buscarVertical(Photo p, List<Photo> vert) {
 
 		Photo aux=null;
 		int min=1000;
 		
-		for (Photo p2 : photos) {
+		for (Photo p2 : vert) {
 			if (p2.vertival) {
 				int i = p2.getCoincidencias(p);
 				if (i<min) {

@@ -6,8 +6,13 @@ import java.util.List;
 public class Photo {
 
     List<String> tags = new LinkedList<>();
-    boolean vertival;
+    public int id;
+
+	boolean vertival;
     
+	public Photo(int i) {
+		id = i;
+	}
     
    
     public int getCoincidencias(Photo p) {
